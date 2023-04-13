@@ -11,7 +11,7 @@ pipeline {
                 sh 'docker run --rm tmujee200/dockerfile echo "Container launched successfully"'
             }
         }
-        stage('Push') {
+        stage('PUSH') {
             steps {
                 withCredentials([usernamePassword(credentialsId: '<fordocker>', passwordVariable: 'tmujee200', usernameVariable: 'alladin 098')]) {
                     sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
@@ -20,4 +20,5 @@ pipeline {
             }
         }
     }
+
 }
